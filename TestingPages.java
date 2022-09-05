@@ -18,16 +18,16 @@ public class TestingPages {
         WebDriverManager.chromedriver().setup();
     }
 
-        @BeforeEach
-        public void setupTests(){
+    @BeforeEach
+    public void setupTests(){
             myBrowserDriver = new ChromeDriver();
             governmentBgHomePage = new GovernmentHomePage(myBrowserDriver);
             coronaVirusBgHomePage = new CoronaHomePage(myBrowserDriver);
             myBrowserDriver.manage().window().maximize();
         }
 
-        @Test
-    void covidPortalLinkWorksCorrectly(){
+     @Test
+     void covidPortalLinkWorksCorrectly(){
         governmentBgHomePage.navigateToGovernmentBg();
         governmentBgHomePage.clickCovidInfoPortalIcon();
         governmentBgHomePage.switchToBrowserTabByIndex(1);
